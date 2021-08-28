@@ -56,56 +56,22 @@ if(substr($finalres['organization'],0,10)=='Cloudflare'){
 	echo "</br>";
 	echo "<i>Trying with MX records, if not proxied, You will get HOSTING SERVER DETAILS,However, Accuracy not guaranteed...</i>";
 	echo "</br>";
+	echo "<br>";
 	echo "MX Records are :";
 	echo "</br>";
 	if(dns_get_mx($web, $mx_details)) {
     //foreach( $mx_details as $key => $value) {
 		$mxRec=$mx_details[0];
-		https://mxtoolbox.com/SuperTool.aspx?action=mx%3ab0mber.com&run=toolpage
 		echo $mx_details[0];
 		echo "</br>";
+		echo "<br>";
 		echo "Checking IP behind these MX records, Wait some seconds...";
-		$ip2 = gethostbyname($mxRec);
-		$specKey2='5b66022712ad4c0294d7cb0b2fdbea73';
-		$url2="https://api.ipgeolocation.io/ipgeo?apiKey=".$specKey2."&ip=".$ip;
-		$ch2 = curl_init($url2);
-		curl_setopt($ch2, CURLOPT_RETURNTRANSFER, 1);   
-		$res2 = curl_exec($ch2); 
-		$finalres2 = (array) json_decode($res2,true);
-		
-		echo "</br>";
-    echo "IP : ".$finalres2['ip'];
-	echo "</br>";
-	echo "CITY : ".$finalres2['city'];
-	echo "</br>";
-	echo "DISTRICT : ".$finalres2['district'];
-	echo "</br>";
-	echo "ZIP CODE : ".$finalres2['zipcode'];
-	echo "</br>";
-    echo "STATE : ".$finalres2['state_prov'];
-	echo "</br>";
-    echo "COUNTRY CAPITAL : ".$finalres2['country_capital'];
-	echo "</br>";
-    echo "COUNTRY : ".$finalres2['country_name'];
-	echo "</br>";
-    echo "COUNTRY CODE : ".$finalres2['country_code3'];
-	echo "</br>";
-    echo "CONTINENT : ".$finalres2['continent_name'];
-	echo "</br>";
-	echo "CONTINENT CODE : ".$finalres2['continent_code'];
-	echo "</br>";
-	echo "LANGUAGES : ".$finalres2['languages'];
-	echo "</br>";
-	echo "COUNTRY gTLD : ".$finalres2['country_tld'];
-	echo "</br>";
-    echo "*****************************************";
-	echo "</br>";
-	echo "Hosting ORG : ".$finalres2['organization'];
-	echo "</br>";
-	echo "ISP : ".$finalres2['isp'];
-	echo "</br>";
-	echo "ASN : ".$finalres2['asn'];
-	echo "</br>";
+		echo "<br>";
+		echo "<br>";
+		echo "<b>For more info visit</b>";
+		echo "<br>";
+		$url2="https://mxtoolbox.com/SuperTool.aspx?action=mx%3a".$web."&run=toolpage";
+		echo "<b><a href=".$url2." target='_blank'>HERE</a></b>";
 }
 }
 else{
